@@ -1,0 +1,22 @@
+!!!
+%html
+	%head
+		= yield :title
+
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+
+		= yield :head
+
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+		= favicon_link_tag 'favicon.ico'
+
+		%meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+
+	%body{"data-spy" => "scroll", "data-target" => ".navbar"}
+	
+		= render :partial => 'layouts/navbar_landing'
+
+		= render :partial => 'layouts/messages'
+		= yield
+		-#= render :partial => 'layouts/footer'

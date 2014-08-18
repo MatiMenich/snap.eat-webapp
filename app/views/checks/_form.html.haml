@@ -1,0 +1,16 @@
+= form_for @check do |f|
+  - if @check.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@check.errors.count, "error")} prohibited this check from being saved:"
+      %ul
+        - @check.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :table
+    = f.select :table_id, Table.all.collect { |t| [ t.number, t.id ] }
+  .field
+    = f.label :delivered
+    = f.check_box :delivered
+  .actions
+    = f.submit 'Save'

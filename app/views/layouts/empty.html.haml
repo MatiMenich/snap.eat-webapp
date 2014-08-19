@@ -13,10 +13,5 @@
 
 		%meta{content: "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}
 
-	%body{"data-spy" => "scroll", "data-target" => ".navbar"}
-	
-		= render :partial => 'layouts/navbar_landing'
-
-		= render :partial => 'layouts/messages'
+	%body
 		= yield
-		-#= render :partial => 'layouts/footer'

@@ -9,3 +9,8 @@ es:
   product: "Producto"
   order: "Pedir"
   cancel: "Cancelar"
+
+  login: "Iniciar Sesión"
+  logout: "Cerrar Sesión"
+  please_sign_in: "Por favor inicie sesión"
+  remember_me: "Recordarme"

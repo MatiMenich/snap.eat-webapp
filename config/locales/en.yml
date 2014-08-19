@@ -9,3 +9,6 @@ en:
   product: "Product"
   order: "Order"
   cancel: "Cancel"
+
+  remember_me: "Remember Me"
+  login: "Sign In"

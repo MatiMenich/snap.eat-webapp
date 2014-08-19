@@ -50,6 +50,9 @@ gem 'unicorn'
 # User login system
 gem 'devise'
 
+# Awesome boostrap themes
+gem 'bootswatch-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

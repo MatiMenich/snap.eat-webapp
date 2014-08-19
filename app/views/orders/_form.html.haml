@@ -11,7 +11,7 @@
   .field
     = f.select :product_id, Product.all.collect { |p| [ p.name+" - $"+p.price.to_s, p.id ] }
   .field
-    = f.number_field :quantity
+    = f.number_field :quantity, required: true
   .form-group
     = f.submit 'Ordenar', class: 'btn btn-success btn-block'
     %a.btn.btn-danger.btn-block{onclick: "history.back(-1)"}= t(:cancel)

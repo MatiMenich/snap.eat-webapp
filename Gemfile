@@ -47,7 +47,7 @@ gem 'font-awesome-sass'
 # Use unicorn as the app server
 gem 'unicorn'
 
-# Mohter fucking devise bitch
+# User login system
 gem 'devise'
 
 # Use Capistrano for deployment

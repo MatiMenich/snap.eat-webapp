@@ -1,3 +1,11 @@
 en:
   hello: "Hello world"
   new_order: "New Order"
+  english: "English"
+  spanish: "Español"
+
+  select_product: "Select a product ..."
+  quantity: "Quantity"
+  product: "Product"
+  order: "Order"
+  cancel: "Cancel"

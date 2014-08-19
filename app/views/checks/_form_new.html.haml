@@ -1,0 +1,13 @@
+= bootstrap_form_for @check do |f|
+
+  = hidden_field_tag 'check[table_id]', @table.id
+  .actions
+    = button_tag(type: "submit", name: "commit", value: "card", class: "btn btn-warning btn-lg btn-block fancy-button") do
+      = icon('credit-card')
+      Pago con tarjeta
+    = button_tag(type: "submit", name: "commit", value: "cash", class: "btn btn-success btn-lg btn-block fancy-button") do
+      = icon('money')
+      Pago con efectivo
+    %a.btn.btn-danger.btn-block.btn-lg.fancy-button{onclick: "history.back(-1)"}
+      = icon('times')
+      = t(:cancel)

@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
-
+//= require vendor/footable.js
+//= require vendor/jquery.fittext.js

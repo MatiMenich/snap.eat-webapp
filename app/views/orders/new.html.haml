@@ -1,6 +1,6 @@
 .container
-	%h1=t(:new_order)
+	%h1
+		= icon('glass')
+		= t(:new_order)
 
-	= render 'form'
-
-	= link_to 'Back', orders_path
+	= render 'form_new'

@@ -1,5 +1,7 @@
 class ChecksController < ApplicationController
   before_action :set_check, only: [:show, :edit, :update, :destroy]
+  before_action :set_table, only: :new
+  skip_before_filter :authenticate_user!, only: [:show, :new, :create]
 
   # GET /checks
   # GET /checks.json
@@ -24,7 +26,10 @@ class ChecksController < ApplicationController
   # POST /checks
   # POST /checks.json
   def create
-    @check = Check.new(check_params)
+
+    @check = Check.new(table_id: params[:check][:table_id])
+    
+    @check.card_payment = true if params['commit'] == 'card'
 
     respond_to do |format|
       if @check.save
@@ -67,8 +72,12 @@ class ChecksController < ApplicationController
       @check = Check.find(params[:id])
     end
 
+    def set_table
+      @table = Table.find_by_uid(params[:uid])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def check_params
-      params.require(:check).permit(:table_id, :delivered)
+      params.require(:check).permit(:table_id, :delivered, :card_payment)
     end
 end

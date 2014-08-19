@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818011643) do
+ActiveRecord::Schema.define(version: 20140818182257) do
 
   create_table "checks", force: true do |t|
     t.integer  "table_id"
+    t.boolean  "card_payment"
     t.boolean  "delivered"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140818011643) do
   create_table "tables", force: true do |t|
     t.integer  "number"
     t.string   "place"
+    t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

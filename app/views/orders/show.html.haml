@@ -1,3 +1,23 @@
 .jumbotron{style: "text-align:center;"}
-  %h1= @order.token
-  %p Este es el código de tu orden, gracias!
+	%h1.text-info#responsive_code
+		%span.label.label-success
+			= @order.token
+	%br
+	%p 
+		Este es el código de tu orden, la cual debería estar en los próximos minutos en tu mesa. 
+		%strong¡Muchas gracias!
+
+	.panel.panel-info
+		.panel-heading 
+			%h3.panel-title Tu pedido 
+		.panel-body 
+			.badge.badge-info #{@order.quantity} 
+			#{@order.product.name} - $#{@order.product.price}
+		.panel-footer
+			%h3
+				Total: 
+				$#{@order.product.price*@order.quantity}
+		
+	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
+		= icon('plus') 
+		Deseo pedir algo mas ...

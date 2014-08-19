@@ -1,0 +1,26 @@
+.container
+  %h1
+    = icon('glass') 
+    Listing products
+
+  .table-responsive
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Price
+          %th= t(:actions)
+      %tbody
+      - @products.each do |product|
+        %tr
+          %td= product.name
+          %td= product.price
+          %td
+            .btn-group.btn-group-sm{style: 'width:98px;'}
+              = link_to icon('eye'), product, class: 'btn btn-primary'
+              = link_to icon('edit'), edit_product_path(product), class: 'btn btn-warning'
+              = link_to icon('trash-o'), product, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+
+  %br
+
+  = link_to 'New Product', new_product_path

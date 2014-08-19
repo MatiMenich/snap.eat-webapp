@@ -3,7 +3,9 @@
 one:
   number: 1
   place: MyString
+  uid: MyString
 
 two:
   number: 1
   place: MyString
+  uid: MyString

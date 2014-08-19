@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :authenticate_user!, :only => [:show, :new]
+  before_action :set_table, only: :new
+  skip_before_filter :authenticate_user!, :only => [:show, :new, :create]
 
   # GET /orders
   # GET /orders.json
@@ -66,6 +67,10 @@ class OrdersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
+    end
+
+    def set_table
+      @table = Table.find_by_uid(params[:uid])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

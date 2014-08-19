@@ -3,6 +3,7 @@ class CreateTables < ActiveRecord::Migration
     create_table :tables do |t|
       t.integer :number
       t.string :place
+      t.string :uid
 
       t.timestamps
     end

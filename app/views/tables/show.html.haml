@@ -1,0 +1,17 @@
+.container
+  %p
+    %b Number:
+    = @table.number
+  %p
+    %b Place:
+    = @table.place
+  %p
+    %b Uid:
+    = @table.uid
+  %p
+    %b Qr:
+    = image_tag generate_qr_code_image(200, root_url+"code/"+@table.uid)
+  
+  = link_to 'Edit', edit_table_path(@table)
+  \|
+  = link_to 'Back', tables_path

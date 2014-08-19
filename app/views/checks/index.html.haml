@@ -1,21 +1,30 @@
-%h1 Listing checks
+.container
+  %h1 Listing checks
 
-%table
-  %tr
-    %th Table
-    %th Delivered
-    %th
-    %th
-    %th
+  .table-responsive
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Table
+          %th Delivered
+          %th Card Payment
+          %th= t(:created_at)
+          %th= t(:updated_at)
+          %th= t(:actions)
+      %tbody
+      - @checks.each do |check|
+        %tr
+          %td= check.table.number
+          %td= check.delivered
+          %td= check.card_payment
+          %td= check.created_at
+          %td= check.updated_at
+          %td
+            .btn-group.btn-group-sm{style: 'width:98px;'}
+              = link_to icon('eye'), check, class: 'btn btn-primary'
+              = link_to icon('edit'), edit_check_path(check), class: 'btn btn-warning'
+              = link_to icon('trash-o'), check, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
-  - @checks.each do |check|
-    %tr
-      %td= check.table.number
-      %td= check.delivered
-      %td= link_to 'Show', check
-      %td= link_to 'Edit', edit_check_path(check)
-      %td= link_to 'Destroy', check, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %br
 
-%br
-
-= link_to 'New Check', new_check_path
+  = link_to 'New Check', new_check_path

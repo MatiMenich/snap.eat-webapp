@@ -1,25 +1,34 @@
-%h1 Listing orders
+.container
+  %h1
+    = icon('beer') 
+    Listing orders
 
-%table
-  %tr
-    %th Token
-    %th Table
-    %th Product
-    %th Quantity
-    %th
-    %th
-    %th
+  .table-responsive
+    %table.footable.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Token
+          %th Table
+          %th Product
+          %th Quantity
+          %th= t(:created_at)
+          %th= t(:updated_at) 
+          %th= t(:actions)
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td= order.token
+            %td= order.table.number
+            %td= order.product.name 
+            %td= order.quantity
+            %td= order.created_at
+            %td= order.updated_at
+            %td
+              .btn-group.btn-group-sm{style: 'width:98px;'}
+                = link_to icon('eye'), order, class: 'btn btn-primary'
+                = link_to icon('edit'), edit_order_path(order), class: 'btn btn-warning'
+                = link_to icon('trash-o'), order, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
-  - @orders.each do |order|
-    %tr
-      %td= order.token
-      %td= order.table.number
-      %td= order.product.name 
-      %td= order.quantity
-      %td= link_to 'Show', order
-      %td= link_to 'Edit', edit_order_path(order)
-      %td= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %br
 
-%br
-
-= link_to 'New Order', new_order_path
+  = link_to 'New Order', new_order_path

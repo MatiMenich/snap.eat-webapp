@@ -6,7 +6,7 @@
 .container
   .row
     .col-md-4.col-md-offset-4
-      .login-panel.panel.panel-default
+      .login-panel.panel.panel-primary
         .panel-heading
           %h3.panel-title= t(:please_sign_in)
         .panel-body
@@ -18,7 +18,7 @@
               .form-group
                 = f.password_field :password, class: 'form-control', placeholder: 'password'
               - if devise_mapping.rememberable?
-                .checkbox{style: "margin-bottom: 0;"}
+                .checkbox{style: "margin-bottom: 15px;"}
                   %label
                     = f.check_box :remember_me
                     = f.label t(:remember_me), style: "padding-left:0;"

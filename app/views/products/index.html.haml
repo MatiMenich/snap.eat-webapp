@@ -17,7 +17,7 @@
           %td= product.price
           %td
             .btn-group.btn-group-sm{style: 'width:98px;'}
-              = link_to icon('eye'), product, class: 'btn btn-primary'
+              = link_to icon('eye'), product, class: 'btn btn-info'
               = link_to icon('edit'), edit_product_path(product), class: 'btn btn-warning'
               = link_to icon('trash-o'), product, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 

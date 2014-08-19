@@ -3,13 +3,13 @@
 		%span.label.label-success
 			= @order.token
 	%br
-	%p 
+	%p{style: "font-weight: 400;"}  
 		Este es el código de tu orden, la cual debería estar en los próximos minutos en tu mesa. 
 		%strong¡Muchas gracias!
 
 	.panel.panel-info
 		.panel-heading 
-			%h3.panel-title Tu pedido 
+			%h3.panel-title Resumen del pedido 
 		.panel-body 
 			.badge.badge-info #{@order.quantity} 
 			#{@order.product.name} - $#{@order.product.price}

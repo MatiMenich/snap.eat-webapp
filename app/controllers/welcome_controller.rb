@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
 
 	before_action :set_table, only: [:choose_menu, :check_please]
 	skip_before_filter :authenticate_user!
+	layout 'public'
 
 	def index
 	end

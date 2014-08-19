@@ -5,23 +5,27 @@
     %table.table.table-striped.table-bordered.table-hover
       %thead
         %tr
-          %th Table
-          %th Delivered
-          %th Card Payment
+          %th= t(:table)
+          %th= t(:delivered)
+          %th= t(:type_of_payment)
           %th= t(:created_at)
           %th= t(:updated_at)
           %th= t(:actions)
       %tbody
       - @checks.each do |check|
-        %tr
+        %tr{ class: "#{'success' if check.delivered}" }
           %td= check.table.number
           %td= check.delivered
-          %td= check.card_payment
-          %td= check.created_at
-          %td= check.updated_at
+          %td
+            - if check.card_payment
+              = icon("credit-card")
+            - else
+              = icon("money")
+          %td= check.created_at.strftime("%Y/%m/%d %I:%M")
+          %td= check.updated_at.strftime("%Y/%m/%d %I:%M")
           %td
             .btn-group.btn-group-sm{style: 'width:98px;'}
-              = link_to icon('eye'), check, class: 'btn btn-primary'
+              = link_to icon('eye'), check, class: 'btn btn-info'
               = link_to icon('edit'), edit_check_path(check), class: 'btn btn-warning'
               = link_to icon('trash-o'), check, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 

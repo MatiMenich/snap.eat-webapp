@@ -8,9 +8,9 @@
       %thead
         %tr
           %th Token
-          %th Table
-          %th Product
-          %th Quantity
+          %th= t(:table)
+          %th= t(:product)
+          %th= t(:quantity)
           %th= t(:created_at)
           %th= t(:updated_at) 
           %th= t(:actions)
@@ -21,11 +21,11 @@
             %td= order.table.number
             %td= order.product.name 
             %td= order.quantity
-            %td= order.created_at
-            %td= order.updated_at
+            %td= order.created_at.strftime("%Y/%m/%d %I:%M")
+            %td= order.updated_at.strftime("%Y/%m/%d %I:%M")
             %td
               .btn-group.btn-group-sm{style: 'width:98px;'}
-                = link_to icon('eye'), order, class: 'btn btn-primary'
+                = link_to icon('eye'), order, class: 'btn btn-info'
                 = link_to icon('edit'), edit_order_path(order), class: 'btn btn-warning'
                 = link_to icon('trash-o'), order, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 

@@ -2,7 +2,8 @@ class ChecksController < ApplicationController
   before_action :set_check, only: [:show, :edit, :update, :destroy]
   before_action :set_table, only: :new
   skip_before_filter :authenticate_user!, only: [:show, :new, :create]
-
+  layout 'public', :only => [:show, :new, :create]
+  
   # GET /checks
   # GET /checks.json
   def index

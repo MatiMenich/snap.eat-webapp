@@ -7,6 +7,11 @@ es:
   select_product: "Seleccione un producto ..."
   quantity: "Cantidad"
   product: "Producto"
+  table: "Mesa"
+  created_at: "Creado en"
+  updated_at: "Actualizado en"
+  type_of_payment: "Tipo de pago"
+  delivered: "Entregado"
   order: "Pedir"
   cancel: "Cancelar"
 

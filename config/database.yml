@@ -22,7 +22,9 @@ test:
 
 production:
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  host:	ec2-54-225-182-133.compute-1.amazonaws.com
+  database:	d3ogkbiei9m6mh
+  user:	wsqoajlqsmnwwb
+  password: EqF8jTtm60NLu2KdoDq_t_GYmr
   pool: 5
+  timeout: 5000

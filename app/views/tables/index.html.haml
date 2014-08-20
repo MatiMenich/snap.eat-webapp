@@ -20,7 +20,7 @@
           %td
             .btn-group.btn-group-sm{style: 'width:98px;'}
               = link_to icon('eye'), table, class: 'btn btn-info'
-              = link_to icon('edit'), edit_table_path(table), class: 'btn btn-warning'
+              = link_to icon('pencil'), edit_table_path(table), class: 'btn btn-warning'
               = link_to icon('trash-o'), table, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
   %br

@@ -12,6 +12,8 @@
     = f.select :product_id, Product.all.collect { |p| [ p.name+" - $"+p.price.to_s, p.id ] }
   .field
     = f.number_field :quantity, required: true
+  .field
+    = f.check_box :delivered
   .form-group
     = f.submit 'Editar', class: 'btn btn-success btn-block'
     %a.btn.btn-danger.btn-block{onclick: "history.back(-1)"}= t(:cancel)

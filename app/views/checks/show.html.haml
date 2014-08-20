@@ -7,8 +7,13 @@
 		- else
 			%span.label.label-success
 				= icon("money")
-				Con billullo
+				Con billete
 	%br
 	%p{style: "font-weight: 400;"} 
 		Tu cuenta debiera llegar a la mesa en los próximos minutos. 
+		
+	%p 
 		%strong Muchas gracias, ¡Nos vemos pronto!
+	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@check.table_id).uid}" }
+		= icon('home') 
+		Volver al menú principal

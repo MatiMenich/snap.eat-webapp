@@ -1,6 +1,6 @@
 .container
   %h1
-    = icon('beer') 
+    = icon('glass') 
     Listing orders
 
   .table-responsive
@@ -11,24 +11,24 @@
           %th= t(:table)
           %th= t(:product)
           %th= t(:quantity)
+          %th= t(:delivered)
           %th= t(:created_at)
           %th= t(:updated_at) 
           %th= t(:actions)
       %tbody
         - @orders.each do |order|
-          %tr
+          %tr{class: "#{'success' if order.delivered}"}
             %td= order.token
             %td= order.table.number
             %td= order.product.name 
             %td= order.quantity
+            %td= order.delivered ? icon('thumbs-up') : icon('thumbs-down')
             %td= order.created_at.strftime("%Y/%m/%d %I:%M")
             %td= order.updated_at.strftime("%Y/%m/%d %I:%M")
             %td
               .btn-group.btn-group-sm{style: 'width:98px;'}
                 = link_to icon('eye'), order, class: 'btn btn-info'
-                = link_to icon('edit'), edit_order_path(order), class: 'btn btn-warning'
+                = link_to icon('pencil'), edit_order_path(order), class: 'btn btn-warning'
                 = link_to icon('trash-o'), order, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
   %br
-
-  = link_to 'New Order', new_order_path

@@ -8,6 +8,6 @@
     = button_tag(type: "submit", name: "commit", value: "cash", class: "btn btn-success btn-lg btn-block fancy-button") do
       = icon('money')
       Pago con efectivo
-    %a.btn.btn-danger.btn-block.btn-lg.fancy-button{onclick: "history.back(-1)"}
+    %a.btn.btn-danger.btn-block.btn-lg.fancy-button{ href: "/code/#{@table.uid}" }
       = icon('times')
       = t(:cancel)

@@ -53,6 +53,9 @@ gem 'devise'
 # Awesome boostrap themes
 gem 'bootswatch-rails'
 
+# For urls different than :id
+gem 'friendly_id'
+
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller', :platforms=>[:mri_21]

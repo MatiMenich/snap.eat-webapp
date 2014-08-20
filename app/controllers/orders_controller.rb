@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     respond_to do |format|
-      if @order.save
+      if @order.save!
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -68,7 +68,7 @@ class OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      @order = Order.friendly.find_by_slug(params[:id])
     end
 
     def set_table

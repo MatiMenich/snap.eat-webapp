@@ -48,7 +48,7 @@ class ChecksController < ApplicationController
   def update
     respond_to do |format|
       if @check.update(check_params)
-        format.html { redirect_to @check, notice: 'Check was successfully updated.' }
+        format.html { redirect_to action: "index", notice: 'Check was successfully updated.' }
         format.json { render :show, status: :ok, location: @check }
       else
         format.html { render :edit }

@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
+        @table = Table.find_by_id(params[:order][:table_id])
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -45,7 +46,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to action: "index", notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -76,6 +77,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:token, :table_id, :product_id, :quantity)
+      params.require(:order).permit(:token, :table_id, :product_id, :quantity, :delivered)
     end
 end

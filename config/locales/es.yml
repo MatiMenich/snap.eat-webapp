@@ -12,6 +12,7 @@ es:
   updated_at: "Actualizado en"
   type_of_payment: "Tipo de pago"
   delivered: "Entregado"
+  actions: "Acciones"
   order: "Pedir"
   cancel: "Cancelar"
 

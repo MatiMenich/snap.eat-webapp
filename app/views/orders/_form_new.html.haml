@@ -1,10 +1,7 @@
 = bootstrap_form_for @order do |f|
   - if @order.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
-      %ul
-        - @order.errors.full_messages.each do |msg|
-          %li= msg
+    = f.alert_message "Por favor arregle los siguientes errores."
+    = f.error_summary
 
   = hidden_field_tag 'order[table_id]', @table.id
   .field
@@ -15,5 +12,5 @@
     = f.number_field :quantity, prepend: icon('slack'), required: true, class: "input-lg", label: t(:quantity)
   .form-group
     = f.submit t(:order), class: 'btn btn-success btn-lg btn-block fancy-button'
-    %a.btn.btn-danger.btn-block.btn-lg.fancy-button{onclick: "history.back(-1)"}= t(:cancel)
+    %a.btn.btn-danger.btn-block.btn-lg.fancy-button{ href: "/code/#{@table.uid}" }= t(:cancel)
   %br

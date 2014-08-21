@@ -6,13 +6,26 @@ User.create!([
 ])
 
 Table.create([
-	{:number => 1, place: "Gino's"},
-	{:number => 2, place: "Gino's"},
-	{:number => 3, place: "Gino's"}
+	{:number => 1, place: "Golden West"},
+	{:number => 2, place: "Golden West"},
+	{:number => 3, place: "Golden West"}
 ])
 
 Product.create([
-	{:name => "Piscola Alto", price: 3000},
-	{:name => "Piscola Mistral", price: 3000},
-	{:name => "Piscola Capel", price: 2000}
+	{:name => "Alto del Carmen 35º", price: 2500, category: 'Pisco' },
+	{:name => "Alto del Carmen 40º Añejo", price: 3000, category: 'Pisco' },
+	{:name => "Mistral 35º", price: 2500, category: 'Pisco' },
+	{:name => "Mistral 40º", price: 3000, category: 'Pisco' },
+	{:name => "Mojito Cubano (menta)", price: 2800, category: 'Ron' },
+	{:name => "Mojito Albahaca", price: 2800, category: 'Ron' },
+	{:name => "Daiquiri", price: 2800, category: 'Ron' },
+	{:name => "Pampero", price: 2800, category: 'Ron' },
+	{:name => "Pampero Selección", price: 3500, category: 'Ron' },
+	{:name => "Piña Colada", price: 2800, category: 'Ron' },
+	{:name => "Johnnie Walker Red Label", price: 4800, category: 'Whisky/Burbon' },
+	{:name => "Johnnie Walker Black Label", price: 6500, category: 'Whisky/Burbon' },
+	{:name => "Johnnie Walker Gold Label", price: 8500, category: 'Whisky/Burbon' },
+	{:name => "Chivas Reagal (12 años)", price: 6500, category: 'Whisky/Burbon' },
+	{:name => "Jack Daniel's (Bourbon)", price: 5500, category: 'Whisky/Burbon' }
+
 ])

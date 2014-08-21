@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   # Include these helpers in every controller
   include TranslationsHelper
   include QrCodeHelper
+  include ProductsHelper
 
   private
 

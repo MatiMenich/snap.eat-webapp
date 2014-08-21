@@ -9,12 +9,14 @@
         %tr
           %th Name
           %th Price
+          %th Category
           %th= t(:actions)
       %tbody
       - @products.each do |product|
         %tr
           %td= product.name
           %td= product.price
+          %td= product.category
           %td
             .btn-group.btn-group-sm{style: 'width:98px;'}
               = link_to icon('eye'), product, class: 'btn btn-info'

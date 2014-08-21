@@ -4,7 +4,8 @@ class WelcomeController < ApplicationController
 	skip_before_filter :authenticate_user!
 	layout 'public'
 
-	def index
+	def splash
+		render(:layout => "layouts/empty")
 	end
 
 	def choose_menu

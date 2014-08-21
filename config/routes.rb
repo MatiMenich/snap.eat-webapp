@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'checks/new/:uid' => 'checks#new'
 
+  get 'splash' => 'welcome#splash'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

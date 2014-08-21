@@ -1,7 +1,7 @@
 .container
 	%h1 
 		= icon('hand-o-up')
-		Pedir la cuenta
+		= t(:check_please)
 
-	%p Por favor elija el medio de pago:
+	%p= t(:choose_payment_method)
 	= render 'form_new'

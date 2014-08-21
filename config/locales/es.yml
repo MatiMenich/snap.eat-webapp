@@ -4,19 +4,41 @@ es:
   english: "English"
   spanish: "Español"
 
-  select_product: "Seleccione un producto ..."
-  quantity: "Cantidad"
-  product: "Producto"
   table: "Mesa"
   created_at: "Creado en"
   updated_at: "Actualizado en"
   type_of_payment: "Tipo de pago"
   delivered: "Entregado"
   actions: "Acciones"
-  order: "Pedir"
   cancel: "Cancelar"
 
   login: "Iniciar Sesión"
   logout: "Cerrar Sesión"
   please_sign_in: "Por favor inicie sesión"
   remember_me: "Recordarme"
+
+  #Choose Menu
+  order_something: "Quiero Pedir Algo"
+  check_please: "¡La Cuenta Por Favor!"
+  welcome_message: "Bienvenido a la nueva forma de pedir"
+  choose_something: "Por favor elija una opción:"
+
+  #Orders
+  select_product: "Seleccione un producto ..."
+  quantity: "Cantidad"
+  product: "Producto"
+  order: "Pedir"
+  enjoy_it: "¡Que lo disfrutes!"
+  code_explanation: "Este es el código de tu orden, la cual debería estar en los próximos minutos en tu mesa. "
+  order_summary: "Resumen de tu orden"
+  order_something_more: "Deseo pedir algo mas ..."
+
+  #Checks
+  card_payment: "Pago Con Tarjeta"
+  cash_payment: "Pago Con Efectivo"
+  choose_payment_method: "Por favor elija el medio de pago:"
+  card_phrase: "¡La maquinita!"
+  cash_phrase: "Con billete"
+  check_explanation: "Tu cuenta debiera llegar a la mesa en los próximos minutos. "
+  thank_you: "Muchas gracias, ¡Nos vemos pronto!"
+  back_to_the_home_menu: "Volver al menú principal"

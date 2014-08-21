@@ -4,13 +4,13 @@
 			= @order.token
 	%br
 	%p{style: "font-weight: 400;"}  
-		Este es el código de tu orden, la cual debería estar en los próximos minutos en tu mesa. 
+		=t(:code_explanation)
 	%p
-		%strong¡Que lo disfrutes!
+		%strong=t(:enjoy_it)
 
 	.panel.panel-info
 		.panel-heading 
-			%h3.panel-title Resumen del pedido 
+			%h3.panel-title= t(:order_summary) 
 		.panel-body 
 			.badge.badge-info #{@order.quantity} 
 			#{@order.product.name} - $#{@order.product.price}
@@ -21,4 +21,4 @@
 		
 	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
 		= icon('plus') 
-		Deseo pedir algo mas ...
+		= t(:order_something_more)

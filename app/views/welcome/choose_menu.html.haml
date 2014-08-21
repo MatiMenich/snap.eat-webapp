@@ -1,9 +1,9 @@
 .container
-  %h1 Bienvenido a la nueva forma de pedir
-  %p Por favor selecciona una opción:
+  %h1= t(:welcome_message)
+  %p= t(:choose_something)
   %a.btn.btn-primary.btn-lg.btn-block.fancy-button{ href: "/orders/new/#{@table.uid}" }
     = icon('glass')
-    Quiero Pedir Algo
+    = t(:order_something)
   %a.btn.btn-success.btn-lg.btn-block.fancy-button{ href: "/checks/new/#{@table.uid}" }
     = icon('hand-o-up')
-    ¡La Cuenta Por Favor!
+    = t(:check_please)

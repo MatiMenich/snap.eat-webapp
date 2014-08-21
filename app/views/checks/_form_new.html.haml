@@ -4,10 +4,10 @@
   .actions
     = button_tag(type: "submit", name: "commit", value: "card", class: "btn btn-warning btn-lg btn-block fancy-button") do
       = icon('credit-card')
-      Pago con tarjeta
+      = t(:card_payment)
     = button_tag(type: "submit", name: "commit", value: "cash", class: "btn btn-success btn-lg btn-block fancy-button") do
       = icon('money')
-      Pago con efectivo
+      = t(:cash_payment)
     %a.btn.btn-danger.btn-block.btn-lg.fancy-button{ href: "/code/#{@table.uid}" }
       = icon('times')
       = t(:cancel)

@@ -4,12 +4,34 @@ en:
   english: "English"
   spanish: "Español"
 
-  select_product: "Select a product ..."
-  quantity: "Quantity"
-  product: "Product"
-  order: "Order"
   cancel: "Cancel"
   actions: "Actions"
 
   remember_me: "Remember Me"
   login: "Sign In"
+
+  #Choose Menu
+  order_something: "I Want To Order Something"
+  check_please: "Check please!"
+  welcome_message: "Welcome to the new way to order"
+  choose_something: "Please choose an option:"
+  
+  #Orders
+  select_product: "Select a product ..."
+  quantity: "Quantity"
+  product: "Product"
+  order: "Order"
+  enjoy_it: "Enjoy it!"
+  code_explanation: "This is your order code, that should be arriving at your table in a few minutes. "
+  order_summary: "Order summary"
+  order_something_more: "I want to order something more ..."
+
+  #Checks
+  card_payment: "Card Payment"
+  cash_payment: "Cash Payment"
+  choose_payment_method: "Please choose your payment method:"
+  card_phrase: "The machine!"
+  cash_phrase: "Make it rain"
+  check_explanation: "Your check should be arriving at your table in a couple minutes. "
+  thank_you: "Thank you, ¡See you soon!"
+  back_to_the_home_menu: "Go back to the home menu"

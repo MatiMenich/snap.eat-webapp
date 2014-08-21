@@ -7,10 +7,10 @@
   .field
     .form-group
       = label_tag 'order[product_id]', t(:product) , class: 'control-label'
-      = select_tag 'order[product_id]', options_for_select(Product.all.collect { |p| [ p.name+" - $"+p.price.to_s, p.id ] }), prompt: t(:select_product), class: 'form-control input-lg'
+      = select_tag 'order[product_id]', grouped_options_for_select(generate_options), prompt: t(:select_product), class: 'form-control input-lg'
   .field
     = f.number_field :quantity, prepend: icon('slack'), required: true, class: "input-lg", label: t(:quantity)
   .form-group
-    = f.submit t(:order), class: 'btn btn-success btn-lg btn-block fancy-button'
+    = f.submit t(:order), class: 'btn btn-success btn-lg btn-block fancy-button', data: {"loading-text" => "Pidiendo ..."} , id: "order"
     %a.btn.btn-danger.btn-block.btn-lg.fancy-button{ href: "/code/#{@table.uid}" }= t(:cancel)
   %br

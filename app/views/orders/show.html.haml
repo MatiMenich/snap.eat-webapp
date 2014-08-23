@@ -19,6 +19,9 @@
 				Total: 
 				$#{@order.product.price*@order.quantity}
 		
-	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
+	%a.btn.btn-block.btn-info.btn-lg.fancy-button{ href: "/orders/new/#{Table.find(@order.table_id).uid}" }
 		= icon('plus') 
 		= t(:order_something_more)
+	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
+		= icon('home') 
+		= t(:back_to_the_home_menu)

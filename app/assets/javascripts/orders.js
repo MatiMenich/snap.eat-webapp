@@ -1,20 +1,22 @@
 var ready = function() {
     $("#responsive_code").fitText(0.3, { minFontSize: '20px', maxFontSize: '100px' });
 
-
+/*
     $('#order').click(function () {
 	    var btn = $(this)
 	    btn.button('loading')
 	});
+*/
 
 	$('#add_product').click(function () {
 		var newInputs = $('.template').html();
-		var removeButton = $('<a class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>');
+		var removeButton = $('<a class="btn btn-danger btn-sm btn-block"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>');
 
 		var inputDiv = $('<div class="new_product animated-1 fadeInDown"></div>');
 
-		inputDiv.append(removeButton);
 		inputDiv.append(newInputs);
+    inputDiv.append(removeButton);
+    inputDiv.append('<hr>');
 		$('.product-fieldset').append(inputDiv);
 
 

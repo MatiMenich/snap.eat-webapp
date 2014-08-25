@@ -28,10 +28,9 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-    @product = Product.find(params[:product_id][0])
 
     respond_to do |format|
-      if @order.save && @order.add(@product, @product.price, params[:quantity][0])
+      if @order.save && add_products_to_order
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -76,6 +75,12 @@ class OrdersController < ApplicationController
       @table = Table.find_by_uid(params[:uid])
     end
 
+    def add_products_to_order
+      for i in 0..(params[:product_id].length-1)
+        product = Product.find(params[:product_id][i].to_i)
+        @order.add(product,product.price,params[:quantity][i].to_i)
+      end
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:table_id)

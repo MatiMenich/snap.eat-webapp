@@ -9,8 +9,7 @@
         %tr
           %th Token
           %th= t(:table)
-          %th= t(:product)
-          %th= t(:quantity)
+          %th= t(:details)
           %th= t(:delivered)
           %th= t(:created_at)
           %th= t(:updated_at) 
@@ -20,8 +19,10 @@
           %tr{class: "#{'success' if order.delivered}"}
             %td= order.token
             %td= order.table.number
-            %td= order.product.name 
-            %td= order.quantity
+            %td
+              - order.shopping_cart_items.each do |ci|
+                .badge.badge-info #{ci.quantity}
+                = ci.item.name.to_s+". "
             %td= order.delivered ? icon('thumbs-up') : icon('thumbs-down')
             %td= order.created_at.strftime("%Y/%m/%d %I:%M")
             %td= order.updated_at.strftime("%Y/%m/%d %I:%M")

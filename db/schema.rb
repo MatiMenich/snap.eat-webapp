@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820203544) do
+ActiveRecord::Schema.define(version: 20140825010341) do
 
   create_table "checks", force: true do |t|
     t.integer  "table_id"
@@ -39,22 +39,30 @@ ActiveRecord::Schema.define(version: 20140820203544) do
   create_table "orders", force: true do |t|
     t.string   "token"
     t.integer  "table_id"
-    t.integer  "product_id"
-    t.integer  "quantity"
     t.boolean  "delivered"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
   end
 
-  add_index "orders", ["product_id"], name: "index_orders_on_product_id"
   add_index "orders", ["slug"], name: "index_orders_on_slug"
   add_index "orders", ["table_id"], name: "index_orders_on_table_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.integer  "price"
+    t.float    "price"
     t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shopping_cart_items", force: true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "quantity"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.float    "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

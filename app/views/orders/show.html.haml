@@ -11,13 +11,14 @@
 	.panel.panel-info
 		.panel-heading 
 			%h3.panel-title= t(:order_summary) 
-		.panel-body 
-			.badge.badge-info #{@order.quantity} 
-			#{@order.product.name} - $#{@order.product.price}
+		.panel-body
+			- @order.shopping_cart_items.each do |product| 
+				.badge.badge-info #{product.quantity} 
+				#{product.item.name} - $#{product.item.price}
 		.panel-footer
 			%h3
 				Total: 
-				$#{@order.product.price*@order.quantity}
+				$#{@order.total}
 		
 	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
 		= icon('plus') 

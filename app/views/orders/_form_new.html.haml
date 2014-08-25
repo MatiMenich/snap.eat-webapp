@@ -6,10 +6,12 @@
   = hidden_field_tag 'order[table_id]', @table.id
   .field
     .form-group
-      = label_tag 'order[product_id]', t(:product) , class: 'control-label'
-      = select_tag 'order[product_id]', grouped_options_for_select(generate_options), prompt: t(:select_product), class: 'form-control input-lg'
+      = label_tag 'product_id[]', t(:product) , class: 'control-label'
+      = select_tag 'product_id[]', grouped_options_for_select(generate_options), prompt: t(:select_product), class: 'form-control input-lg', required: true
   .field
-    = f.number_field :quantity, prepend: icon('slack'), required: true, class: "input-lg", label: t(:quantity)
+    .form-group
+      = label_tag 'quantity[]', t(:quantity) , class: 'control-label'
+      = number_field_tag 'quantity[]', nil, min: 1 , required: true, class: "form-control input-lg"
   .form-group
     = f.submit t(:order), class: 'btn btn-success btn-lg btn-block fancy-button', data: {"loading-text" => "Pidiendo ..."} , id: "order"
     %a.btn.btn-danger.btn-block.btn-lg.fancy-button{ href: "/code/#{@table.uid}" }= t(:cancel)

@@ -2,11 +2,12 @@ class Order < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :token, use: :slugged
 	belongs_to :table
-	belongs_to :product
 
-	validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
+	acts_as_shopping_cart_using :shopping_cart_item
 
-	validates :product_id, presence: true
+	def tax_pct
+		0
+	end
 
 	before_create :generate_unique_token
 

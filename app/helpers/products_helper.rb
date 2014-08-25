@@ -5,7 +5,7 @@ module ProductsHelper
 		set_categories
 
 		Product.all.each do |p|
-			@categories[p.category].push([ p.name+" - $"+p.price.to_s, p.id ])
+			@categories[p.category].push([ p.name+" - $"+p.price.to_i.to_s, p.id ])
 		end
 
 		return @categories

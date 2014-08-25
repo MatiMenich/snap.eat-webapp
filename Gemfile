@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# Gives shopping cart/item behaviour to models 
 gem 'acts_as_shopping_cart'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -57,6 +58,12 @@ gem 'bootswatch-rails'
 
 # For urls different than :id
 gem 'friendly_id'
+
+# Datatables
+gem 'jquery-datatables-rails', '~> 2.2.2'
+
+# Responsive datatables
+gem 'lodash-rails'
 
 group :development do
 	gem 'better_errors'

@@ -2,31 +2,31 @@
   %h1
     = icon('glass') 
     Listing orders
-
   .table-responsive
-    %table.footable.table.table-striped.table-bordered.table-hover
+    %table#order_table.table.table-striped.table-bordered.table-hover
       %thead
         %tr
-          %th Token
-          %th= t(:table)
+          %th{ data: {class:"expand"} }= t(:table)
+          %th{ data: {hide: "phone"} } Token
           %th= t(:details)
-          %th= t(:delivered)
-          %th= t(:created_at)
-          %th= t(:updated_at) 
-          %th= t(:actions)
+          %th{ data: {hide: "phone, tablet"} }= t(:delivered)
+          %th{ data: {hide: "phone, tablet"} }= t(:created_at)
+          %th{ data: {hide: "phone, tablet"} }= t(:updated_at) 
+          %th{ data: {hide: "phone"} }= t(:actions)
       %tbody
         - @orders.each do |order|
           %tr{class: "#{'success' if order.delivered}"}
-            %td= order.token
             %td= order.table.number
+            %td= order.token
             %td
               - order.shopping_cart_items.each do |ci|
-                .badge.badge-info #{ci.quantity}
-                = ci.item.name.to_s+". "
+                .item
+                  .badge.badge-info #{ci.quantity}
+                  = ci.item.name.to_s+". " 
             %td= order.delivered ? icon('thumbs-up') : icon('thumbs-down')
             %td= order.created_at.strftime("%Y/%m/%d %I:%M")
             %td= order.updated_at.strftime("%Y/%m/%d %I:%M")
-            %td
+            %td{style: "text-align: center;"}
               .btn-group.btn-group-sm{style: 'width:98px;'}
                 = link_to icon('eye'), order, class: 'btn btn-info'
                 = link_to icon('pencil'), edit_order_path(order), class: 'btn btn-warning'

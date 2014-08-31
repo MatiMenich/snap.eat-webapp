@@ -1,9 +1,11 @@
 .container
-  %h1= t(:welcome_message)
-  %p= t(:choose_something)
-  %a.btn.btn-primary.btn-lg.btn-block.fancy-button{ href: "/orders/new/#{@table.uid}" }
-    = icon('glass')
-    = t(:order_something)
-  %a.btn.btn-success.btn-lg.btn-block.fancy-button{ href: "/checks/new/#{@table.uid}" }
-    = icon('hand-o-up')
-    = t(:check_please)
+  .row
+    .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-12
+      %h1= t(:welcome_message)
+      %p= t(:choose_something)
+      %a.btn.btn-primary.btn-lg.btn-block.fancy-button{ href: "/orders/new/#{@table.uid}" }
+        = icon('glass')
+        = t(:order_something)
+      %a.btn.btn-success.btn-lg.btn-block.fancy-button{ href: "/checks/new/#{@table.uid}" }
+        = icon('hand-o-up')
+        = t(:check_please)

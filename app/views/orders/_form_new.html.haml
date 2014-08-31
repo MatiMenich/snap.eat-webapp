@@ -29,13 +29,13 @@
         = t(:order)
       %a.hidden-xs.btn.btn-warning.btn-block.btn-lg.fancy-button.empty-cart
         = icon('ban') 
-        Vaciar
+        = t(:empty_cart)
       .btn-group.btn-group-justified.visible-xs.btn-bottom
         .btn-group
           %a.btn.btn-lg.btn-warning.fancy-button.empty-cart{ style: "border-radius: 0 !important;" }
-            = icon('ban') 
-            Vaciar
+            = icon('ban', '', class: "fa-spin") 
+            = t(:empty_cart)
         .btn-group
           %button.btn.btn-lg.btn-success.fancy-button{type: "submit",data: { "loading-text" => "Pidiendo ..." }, style: "border-radius: 0 !important;" }
-            = t(:order)
             = icon('bullhorn')
+            = t(:order)

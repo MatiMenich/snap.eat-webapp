@@ -34,6 +34,7 @@ es:
   order_summary: "Resumen de tu pedido"
   order_something_more: "Deseo pedir algo mas ..."
   added: "agregado(s)"
+  empty_cart: "Vaciar"
 
   #Checks
   card_payment: "Pago Con Tarjeta"

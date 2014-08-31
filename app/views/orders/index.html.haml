@@ -27,6 +27,9 @@
             %td= order.created_at.strftime("%Y/%m/%d %I:%M")
             %td= order.updated_at.strftime("%Y/%m/%d %I:%M")
             %td{style: "text-align: center;"}
+              .btn-group.btn-group-sm
+                %a.btn.btn-success= icon('thumbs-up')
+                %a.btn.btn-danger= icon('thumbs-down')
               .btn-group.btn-group-sm{style: 'width:98px;'}
                 = link_to icon('eye'), order, class: 'btn btn-info'
                 = link_to icon('pencil'), edit_order_path(order), class: 'btn btn-warning'

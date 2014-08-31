@@ -27,6 +27,7 @@ en:
   order_summary: "Order summary"
   order_something_more: "I want to order something more ..."
   added: "added"
+  empty_cart: "Empty"
 
   #Checks
   card_payment: "Card Payment"

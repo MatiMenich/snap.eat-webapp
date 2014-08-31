@@ -19,10 +19,10 @@
             %td= order.table.number
             %td= order.token
             %td
-              - order.shopping_cart_items.each do |ci|
+              - order.line_items.each do |li|
                 .item
-                  .badge.badge-info #{ci.quantity}
-                  = ci.item.name.to_s+". " 
+                  .badge.badge-info #{li.quantity}
+                  = li.product.name.to_s+". " 
             %td= order.delivered ? icon('thumbs-up') : icon('thumbs-down')
             %td= order.created_at.strftime("%Y/%m/%d %I:%M")
             %td= order.updated_at.strftime("%Y/%m/%d %I:%M")

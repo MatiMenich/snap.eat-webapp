@@ -28,10 +28,12 @@ es:
   quantity: "Cantidad"
   product: "Producto"
   order: "Pedir"
+  order_now: "Pedir Ahora"
   enjoy_it: "¡Que lo disfrutes!"
   code_explanation: "Este es el código de tu pedido, el cual debería estar en los próximos minutos en tu mesa. "
   order_summary: "Resumen de tu pedido"
   order_something_more: "Deseo pedir algo mas ..."
+  added: "agregado(s)"
 
   #Checks
   card_payment: "Pago Con Tarjeta"

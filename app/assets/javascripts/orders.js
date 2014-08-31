@@ -3,33 +3,30 @@
 var ready = function() {
     $("#responsive_code").fitText(0.3, { minFontSize: '20px', maxFontSize: '100px' });
 
-/*
-    $('#order').click(function () {
-	    var btn = $(this)
-	    btn.button('loading')
-	});
-*/
+    $(".add-product").click(function () {
+        var item = $(this).parents(".list-group-item")
+        var priceEntry = item.find("p");
+        var productId = item.attr("data-product-id");
+        $.ajax({
+            url:    "/line_items",
+            type:   "POST",
+            data:   {product_id: productId},
+            success: function(response){
+                priceEntry.find(".quantity").remove();
+                priceEntry.append('<span class="quantity label label-success">'+response.quantity+' '+I18n.added+'</span>');
+            }
+        });
+    });
 
-	$('#add_product').click(function () {
-		var newInputs = $('.template').html();
-		var removeButton = $('<a class="btn btn-danger btn-sm btn-block"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>');
-
-		var inputDiv = $('<div class="new_product animated-1 fadeInDown"></div>');
-
-		inputDiv.append(newInputs);
-	    inputDiv.append(removeButton);
-	    inputDiv.append('<hr>');
-		$('.product-fieldset').append(inputDiv);
-
-
-		removeButton.click(function () {
-			inputDiv.removeClass('animated-1 fadeInDown')
-			inputDiv.addClass('animated-05 fadeOutDown');
-	        setTimeout(function() {
-            	inputDiv.remove();
-          	}, 500);
-		});
-	});
+    $(".empty-cart").click(function () {
+        $.ajax({
+            url:    "/empty_cart",
+            type:   "delete",
+            success: function(response){
+                $('.quantity').remove();
+            }
+        });
+    });
 
 	var responsiveHelper = undefined;
     var breakpointDefinition = {

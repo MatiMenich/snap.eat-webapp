@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_table, only: :new
+  include CurrentCart
+  before_action :set_cart, only: [:new, :create]
   skip_before_filter :authenticate_user!, :only => [:show, :new, :create]
   layout 'public', :only => [:show, :new, :create]
 
@@ -27,10 +29,15 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+
     @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
-      if @order.save && add_products_to_order
+      if @order.save
+        
+        destroy_current_cart
+
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -75,12 +82,11 @@ class OrdersController < ApplicationController
       @table = Table.find_by_uid(params[:uid])
     end
 
-    def add_products_to_order
-      for i in 0..(params[:product_id].length-1)
-        product = Product.find(params[:product_id][i].to_i)
-        @order.add(product,product.price,params[:quantity][i].to_i)
-      end
+    def destroy_current_cart
+      Cart.destroy(session[:cart_id])
+      session[:cart_id] = nil
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:table_id)

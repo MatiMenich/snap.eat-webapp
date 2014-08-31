@@ -12,11 +12,8 @@
           %li.list-group-item.list-group-header
             %h4.list-group-item-heading= category
           - get_products_hash[category].each do |product|
-            -# %a.list-group-item{href: "#", "data-target" => ".bs-example-modal-sm", "data-toggle" => "modal"}
             %li.list-group-item{ data: { "product-id" => "#{product.id}" } }
               = product.name
-              -#.label.label-success.pull-right 1 ordered
-              -# = button_to 'agregar', line_items_path(product_id: product)
               .btn.btn-primary.fancy-button.add-product.pull-right
                 = icon("plus")
               %p.list-group-item-text
@@ -28,8 +25,11 @@
               
     .form-group{style: "text-align: center;"}
       %button.hidden-xs.btn.btn-success.btn-block.btn-lg.fancy-button{type: "submit",data: {"loading-text" => "Pidiendo ..."} }
-        = t(:order)
         = icon('bullhorn')
+        = t(:order)
+      %a.hidden-xs.btn.btn-warning.btn-block.btn-lg.fancy-button.empty-cart
+        = icon('ban') 
+        Vaciar
       .btn-group.btn-group-justified.visible-xs.btn-bottom
         .btn-group
           %a.btn.btn-lg.btn-warning.fancy-button.empty-cart{ style: "border-radius: 0 !important;" }
@@ -39,19 +39,3 @@
           %button.btn.btn-lg.btn-success.fancy-button{type: "submit",data: { "loading-text" => "Pidiendo ..." }, style: "border-radius: 0 !important;" }
             = t(:order)
             = icon('bullhorn')
-        
-        
-
-.modal.fade.bs-example-modal-sm{"aria-hidden" => "true", "aria-labelledby" => "mySmallModalLabel", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog.modal-sm
-    .modal-content
-      .modal-header
-        %button.close{"data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true", style: "color: #000000;"}= icon('times')
-          %span.sr-only Close
-        %h4#myModalLabel.modal-title Product
-      .modal-body
-        Product Description
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cerrar
-        %button.btn.btn-primary{:type => "button"} Agregar

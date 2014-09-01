@@ -1,11 +1,15 @@
 !!!
 %html
 	%head
-		%title scan.eat
+		%title scaneat - Escanea, pide y disfruta
 
 		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 
 		= yield :head
+
+		:javascript
+			window.I18n = #{current_translations.to_json.html_safe}
+
 
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags

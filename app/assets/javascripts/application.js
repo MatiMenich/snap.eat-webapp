@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
-//= require vendor/footable.js
 //= require vendor/jquery.fittext.js
+//= require vendor/jquery.dataTables.min.js
+//= require vendor/datatables.bootstrap.js
+//= require vendor/datatables.responsive
+//= require_tree .

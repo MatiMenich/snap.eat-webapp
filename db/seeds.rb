@@ -22,10 +22,10 @@ Product.create([
 	{:name => "Pampero", price: 2800, category: 'Ron' },
 	{:name => "Pampero Selección", price: 3500, category: 'Ron' },
 	{:name => "Piña Colada", price: 2800, category: 'Ron' },
-	{:name => "Johnnie Walker Red Label", price: 4800, category: 'Whisky/Burbon' },
-	{:name => "Johnnie Walker Black Label", price: 6500, category: 'Whisky/Burbon' },
-	{:name => "Johnnie Walker Gold Label", price: 8500, category: 'Whisky/Burbon' },
-	{:name => "Chivas Reagal (12 años)", price: 6500, category: 'Whisky/Burbon' },
-	{:name => "Jack Daniel's (Bourbon)", price: 5500, category: 'Whisky/Burbon' }
+	{:name => "Johnnie Walker Red Label", price: 4800, category: 'Whisky/Bourbon' },
+	{:name => "Johnnie Walker Black Label", price: 6500, category: 'Whisky/Bourbon' },
+	{:name => "Johnnie Walker Gold Label", price: 8500, category: 'Whisky/Bourbon' },
+	{:name => "Chivas Reagal (12 años)", price: 6500, category: 'Whisky/Bourbon' },
+	{:name => "Jack Daniel's (Bourbon)", price: 5500, category: 'Whisky/Bourbon' }
 
 ])

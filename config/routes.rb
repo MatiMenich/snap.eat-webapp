@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :line_items, defaults: { format: :json }
+
+  resources :carts
+
   root 'tables#index'
 
   resources :tables
@@ -13,6 +17,8 @@ Rails.application.routes.draw do
   resources :orders
 
   resources :products
+
+  delete 'empty_cart' => 'carts#empty_current_cart', defaults: { format: :json }
 
   get 'code/:uid' => 'welcome#choose_menu'
 

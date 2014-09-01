@@ -5,7 +5,19 @@ module ProductsHelper
 		set_categories
 
 		Product.all.each do |p|
-			@categories[p.category].push([ p.name+" - $"+p.price.to_s, p.id ])
+			@categories[p.category].push( [ p.name, p.id ] )
+		end
+
+		return @categories
+
+	end
+
+	def get_products_hash
+		
+		set_categories
+
+		Product.all.each do |p|
+			@categories[p.category].push( p )
 		end
 
 		return @categories

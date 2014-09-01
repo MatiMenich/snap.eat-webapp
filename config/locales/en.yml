@@ -15,16 +15,19 @@ en:
   check_please: "Check please!"
   welcome_message: "Welcome to the new way to order"
   choose_something: "Please choose an option:"
-  
+
   #Orders
   select_product: "Select a product ..."
   quantity: "Quantity"
   product: "Product"
   order: "Order"
+  order_now: "Order now"
   enjoy_it: "Enjoy it!"
   code_explanation: "This is your order code, that should be arriving at your table in a few minutes. "
   order_summary: "Order summary"
   order_something_more: "I want to order something more ..."
+  added: "added"
+  empty_cart: "Empty"
 
   #Checks
   card_payment: "Card Payment"

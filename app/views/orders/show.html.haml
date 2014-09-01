@@ -3,25 +3,26 @@
 		%span.label.label-success
 			= @order.token
 	%br
-	%p{style: "font-weight: 400;"}  
-		=t(:code_explanation)
-	%p
-		%strong=t(:enjoy_it)
-
-	.panel.panel-info
-		.panel-heading 
-			%h3.panel-title= t(:order_summary) 
-		.panel-body 
-			.badge.badge-info #{@order.quantity} 
-			#{@order.product.name} - $#{@order.product.price}
-		.panel-footer
-			%h3
-				Total: 
-				$#{@order.product.price*@order.quantity}
-		
-	%a.btn.btn-block.btn-info.btn-lg.fancy-button{ href: "/orders/new/#{Table.find(@order.table_id).uid}" }
-		= icon('plus') 
-		= t(:order_something_more)
-	%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
-		= icon('home') 
-		= t(:back_to_the_home_menu)
+	.row
+		.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-12
+			%p{style: "font-weight: 400;"}
+				=t(:code_explanation)
+			%p
+				%strong=t(:enjoy_it)
+	.row
+		.col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1.col-xs-12
+			.panel.panel-info
+				.panel-heading
+					%h3.panel-title= t(:order_summary)
+				.panel-body{style: "text-align:left;"}
+					- @order.line_items.each do |line_item|
+						.badge.badge-info #{line_item.quantity}
+						#{line_item.product.name} - $#{line_item.product.price.to_i}
+						%br
+				.panel-footer
+					%h3
+						Total:
+						$#{@order.total_price.to_i}
+			%a.btn.btn-block.btn-primary.btn-lg.fancy-button{ href: "/code/#{Table.find(@order.table_id).uid}" }
+				= icon('home') 
+				= t(:back_to_the_home_menu)

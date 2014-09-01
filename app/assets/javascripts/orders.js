@@ -1,6 +1,18 @@
 'use strict';
 
+function checkCart() {
+    if ($('.quantity').length == 0){
+        $('[type=submit]').addClass('disabled');
+    }
+    else {
+        $('[type=submit]').removeClass('disabled');
+    }
+}
+
 var ready = function() {
+
+    checkCart();
+
     $("#responsive_code").fitText(0.3, { minFontSize: '20px', maxFontSize: '100px' });
 
     $(".add-product").click(function () {
@@ -14,6 +26,7 @@ var ready = function() {
             success: function(response){
                 priceEntry.find(".quantity").remove();
                 priceEntry.append('<span class="quantity label label-success">'+response.quantity+' '+I18n.added+'</span>');
+                checkCart();
             }
         });
     });
@@ -24,6 +37,7 @@ var ready = function() {
             type:   "delete",
             success: function(response){
                 $('.quantity').remove();
+                checkCart();
             }
         });
     });

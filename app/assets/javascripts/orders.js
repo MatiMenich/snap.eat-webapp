@@ -2,10 +2,10 @@
 
 function checkCart() {
     if ($('.quantity').length == 0){
-        $('[type=submit]').addClass('disabled');
+        $('.order-button').addClass('disabled');
     }
     else {
-        $('[type=submit]').removeClass('disabled');
+        $('.order-button').removeClass('disabled');
     }
 }
 

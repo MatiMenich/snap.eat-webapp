@@ -13,6 +13,7 @@ var ready = function() {
 
     checkCart();
 
+    // New form behaviour
     $("#responsive_code").fitText(0.3, { minFontSize: '20px', maxFontSize: '100px' });
 
     $(".add-product").click(function () {
@@ -42,6 +43,24 @@ var ready = function() {
         });
     });
 
+    //Index behaviour
+    $('.toggle-delivered').click(function () {
+        var toggleButton = $(this);
+        var orderToken = toggleButton.attr("data-order-token");
+        var delivered = toggleButton.hasClass('btn-primary');
+        $.ajax({
+            url:    "/orders/"+orderToken+".json",
+            type:   "put",
+            data:   {order: {delivered: delivered}},
+            success: function(response){
+                toggleButton.toggleClass('btn-primary btn-success')
+                toggleButton.find('.fa').toggleClass('fa-thumbs-up fa-thumbs-down');
+            }
+        });
+        
+    });
+
+    //Datatables configuration
 	var responsiveHelper = undefined;
     var breakpointDefinition = {
         tablet: 1024,
